@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace ZavrsnaAplikacija
@@ -14,6 +15,7 @@ namespace ZavrsnaAplikacija
 	public partial class txtTemp : Form
 	{
 		int id=0;
+		XmlWriter xmlWriter;
 		public txtTemp()
 		{
 			InitializeComponent();
@@ -31,22 +33,53 @@ namespace ZavrsnaAplikacija
 
 				listStanja.Add(os);
 
-				var Stanja = XDocument.Load("Stanje.xml");
 
-				foreach (Stanje stanje in listStanja)
+				try
 				{
-					var State = new XElement("Stanje",
-						 new XElement("Stanje_ID", os.Id),
-						  new XElement("Temperatura", os.Temp),
-						new XElement("Tlo", os.Tlo),
-						  new XElement("Zrak", os.Zrak),
-						   new XElement("Datum", os.Datum));
+					var Stanja = XDocument.Load("Stanje.xml");
+					foreach (Stanje stanje in listStanja)
+					{
+						var State = new XElement("Stanje",
+							 new XElement("Stanje_ID", os.Id),
+							  new XElement("Temperatura", os.Temp),
+							new XElement("Tlo", os.Tlo),
+							  new XElement("Zrak", os.Zrak),
+							   new XElement("Datum", os.Datum));
+
+
+						Stanja.Element("Stanja").Add(State);
 						
 
-					Stanja.Element("stanja").Add(State);
+					}
+					Stanja.Save("Stanje.xml");
+				}
+
+				catch
+				{
+
+					var Stanja = new XDocument();
+					var rootElem = new XElement("Stanja");
+					Stanja.Add(rootElem);
+					Stanja.Save("Stanje.xml");
+					foreach (Stanje stanje in listStanja)
+					{
+						var State = new XElement("Stanje",
+							 new XElement("Stanje_ID", os.Id),
+							  new XElement("Temperatura", os.Temp),
+							new XElement("Tlo", os.Tlo),
+							  new XElement("Zrak", os.Zrak),
+							   new XElement("Datum", os.Datum));
+
+
+						Stanja.Element("stanja").Add(State);
+						
+
+					}
 					Stanja.Save("Stanje.xml");
 
 				}
+				
+				
 				listStanja.Clear();
 
 				textBox1.Clear();

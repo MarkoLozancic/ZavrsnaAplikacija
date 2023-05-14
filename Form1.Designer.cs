@@ -47,6 +47,8 @@
 			this.btnPretraga = new RoundButtonDemo.CircularButton();
 			this.label8 = new System.Windows.Forms.Label();
 			this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+			this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+			this.Administrator = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -233,6 +235,24 @@
 			this.richTextBox2.TabIndex = 20;
 			this.richTextBox2.Text = "";
 			// 
+			// mySqlCommand1
+			// 
+			this.mySqlCommand1.CacheAge = 0;
+			this.mySqlCommand1.Connection = null;
+			this.mySqlCommand1.EnableCaching = false;
+			this.mySqlCommand1.Transaction = null;
+			// 
+			// Administrator
+			// 
+			this.Administrator.AutoSize = true;
+			this.Administrator.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Administrator.Location = new System.Drawing.Point(294, 56);
+			this.Administrator.Name = "Administrator";
+			this.Administrator.Size = new System.Drawing.Size(146, 28);
+			this.Administrator.TabIndex = 21;
+			this.Administrator.Text = "Administrator";
+			this.Administrator.Visible = false;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,6 +260,7 @@
 			this.BackColor = System.Drawing.Color.Aquamarine;
 			this.CausesValidation = false;
 			this.ClientSize = new System.Drawing.Size(799, 482);
+			this.Controls.Add(this.Administrator);
 			this.Controls.Add(this.richTextBox2);
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.btnUnosStanja);
@@ -285,6 +306,8 @@
 		private RoundButtonDemo.CircularButton btnUnosStanja;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.RichTextBox richTextBox2;
+		private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+		private System.Windows.Forms.Label Administrator;
 	}
 }
 

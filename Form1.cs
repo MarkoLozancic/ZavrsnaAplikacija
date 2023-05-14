@@ -10,7 +10,7 @@ namespace ZavrsnaAplikacija
 {
     public partial class Form1 : Form
     {
-
+		string Admin;
 		
 		static IPAddress ipAd = IPAddress.Parse("192.168.5.12");
 
@@ -21,9 +21,15 @@ namespace ZavrsnaAplikacija
 		TcpListener ServerListener = new TcpListener(ipAd, PortNumber);
 		TcpClient clientSocket = default(TcpClient);
 
-		public Form1()
+		public Form1(string admin)
         {
+			Admin = admin;
             InitializeComponent();
+			if(admin == "admin")
+			{
+				Administrator.Visible = true;
+
+			}
 			
 		}
        
@@ -84,7 +90,7 @@ namespace ZavrsnaAplikacija
 
         private void circularButton1_Click(object sender, EventArgs e)
         {
-			Pregled frm = new Pregled();
+			Pregled frm = new Pregled(Admin);
 			frm.ShowDialog();
            
         }
