@@ -242,7 +242,7 @@
 			this.txtMijenjano.Location = new System.Drawing.Point(615, 367);
 			this.txtMijenjano.Margin = new System.Windows.Forms.Padding(2);
 			this.txtMijenjano.Name = "txtMijenjano";
-			this.txtMijenjano.Size = new System.Drawing.Size(154, 20);
+			this.txtMijenjano.Size = new System.Drawing.Size(161, 20);
 			this.txtMijenjano.TabIndex = 65;
 			this.txtMijenjano.Visible = false;
 			// 
