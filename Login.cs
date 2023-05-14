@@ -27,13 +27,11 @@ namespace ZavrsnaAplikacija
 
 		private void btnPretraga_Click(object sender, EventArgs e)
 		{
-			var users = XDocument.Load("credentials.xml");
+			
 
 			string username = txtUsername.Text;
 			string password = txtPassword.Text;
-			string username1 = (string)users.Root.Element("user").Element("username");
-			string password1 = (string)users.Root.Element("user").Element("password");
-
+			
 
 
 			

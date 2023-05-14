@@ -40,12 +40,13 @@ namespace ZavrsnaAplikacija
 		private void btnpretragaK_Click(object sender, EventArgs e)
 		{
 			listbKorisnici.Items.Clear();
-		
-			var users = XDocument.Load("Stanje.xml");
 
+
+			var users = XDocument.Load("Stanje.xml");
 
 			if (txtImeK.Text != "")
 			{
+			 
 				var query =
 								from Stanje in
 									users.Descendants("Stanje")

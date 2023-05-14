@@ -23,6 +23,21 @@ namespace ZavrsnaAplikacija
 
 		private void btnUnosStanja_Click(object sender, EventArgs e)
 		{
+
+			try
+			{
+
+				var users = XDocument.Load("Stanje.xml");
+			}
+			catch
+			{
+
+				var users = new XDocument();
+				var rootElem = new XElement("Stanja");
+				users.Add(rootElem);
+				users.Save("Stanje.xml");
+
+			}
 			try
 			{
 				id++;

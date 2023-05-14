@@ -37,15 +37,15 @@ namespace ZavrsnaAplikacija
 		
 		private void Form1_Load(object sender, EventArgs e)
         {
-			Thread ThreadingServer = new Thread(StartServer);
-			ThreadingServer.Start();
+			/*Thread ThreadingServer = new Thread(StartServer);
+			ThreadingServer.Start();*/
 		}
-		private void THREAD_MOD(string teste)
+		/*private void THREAD_MOD(string teste)
 		{
 			richTextBox1.Text += Environment.NewLine + teste;
-		}
+		}*/
 
-		private void StartServer()
+		/*private void StartServer()
 		{
 			Action<string> DelegateTeste_ModifyText = THREAD_MOD;
 			ServerListener.Start();
@@ -79,7 +79,7 @@ namespace ZavrsnaAplikacija
 				}
 
 			}
-		}
+		}*/
 
 		private void label2_Click(object sender, EventArgs e)
         {
